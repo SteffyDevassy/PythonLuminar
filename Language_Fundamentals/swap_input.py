@@ -1,0 +1,5 @@
+n1=input("Enter num1")
+n2=input("Enter num2")
+print("values b4 swapping num1=",n1,"num2=",n2)
+(n1,n2)=(n2,n1)
+print("values after swapping num1=",n1,"num2=",n2)

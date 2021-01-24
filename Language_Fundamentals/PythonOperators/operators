@@ -1,0 +1,6 @@
+operatoes=> to perform some operations
+
+1.Arithmetic(+,-,*,/,//,**)
+logical(&,|,^)
+relational(>,<,<=,>=,==)
+compound assignment(+=,-=,*=,...)

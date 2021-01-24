@@ -1,0 +1,126 @@
+#CollegeManagementSystem
+
+# Create database for project
+sql>create database database_name;
+
+
+#Listing all database
+sql>show databases;
+
+
+sql>show tables;
+
+table 1 :students
+=======
+
+# students(rol,name,course,age)
+
+sql>create table students(rol varchar(10),name varchar(15),course varchar(15),age int);
+
+
+#structure of table
+mysql> desc students;
++--------+-------------+------+-----+---------+-------+
+| Field  | Type        | Null | Key | Default | Extra |
++--------+-------------+------+-----+---------+-------+
+| rol    | varchar(10) | YES  |     | NULL    |       |
+| name   | varchar(15) | YES  |     | NULL    |       |
+| course | varchar(15) | YES  |     | NULL    |       |
+| age    | int         | YES  |     | NULL    |       |
++--------+-------------+------+-----+---------+-------+
+
+
+#insert values
+mysql> insert into students values('100','ajay','mca',22);
+mysql> insert into students values('101','vijay','bca',19);
+mysql> insert into students values('102','sajay','mca',22);
+
+
+mysql> select * from students;
++------+-------+--------+------+
+| rol  | name  | course | age  |
++------+-------+--------+------+
+| 100  | ajay  | mca    |   22 |
+| 101  | vijay | bca    |   19 |
+| 102  | sajay | mca    |   22 |
++------+-------+--------+------+
+
+mysql> update students set age=23 where rol='101';
+
+mysql> select * from students;
++------+-------+--------+------+
+| rol  | name  | course | age  |
++------+-------+--------+------+
+| 100  | ajay  | mca    |   22 |
+| 101  | vijay | bca    |   23 |
+| 102  | sajay | mca    |   22 |
++------+-------+--------+------+
+
+table 2  :marks
+=======
+table(marks)-id,rol,total
+sql>create table marks(id int,rol varchar(10),total int);
+
+
+mysql> desc marks;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| id    | int         | YES  |     | NULL    |       |
+| rol   | varchar(10) | YES  |     | NULL    |       |
+| total | int         | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+
+
+sql> insert into marks values(1,'100',46);
+ insert into marks values(2,'101',39);
+ insert into marks values(3,'109',39);
+
+
+mysql> select * from marks;
+
++------+------+-------+
+| id   | rol  | total |
++------+------+-------+
+|    1 | 100  |    46 |
+|    2 | 101  |    39 |
+|    3 | 109  |    39 |
++------+------+-------+
+
+
+mysql> select name,total from students,marks where students.rol=marks.rol;
++-------+-------+
+| name  | total |
++-------+-------+
+| ajay  |    46 |
+| vijay |    39 |
++-------+-------+
+
+
+mysql> select name,total from students,marks where students.rol=marks.rol and students.rol=100;
++------+-------+
+| name | total |
++------+-------+
+| ajay |    46 |
++------+-------+
+
+
+
+
+LOAD DATA LOCAL INFILE "C:\\Users\\aAdmin\\PycharmProjects\\LuminarPython\\movie.csv" INTO TABLE movies
+FIELDS TERMINATED BY ','
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS
+(si_no,movie_name,year,rate,duration);
+
+C:\ProgramData\MySQL\MySQL Server 8.0\Uploads\c
+1)find hihgest rating from this movie dataset
+2)find number of movies with highest rating
+3)list movie names in descending order of rating
+4)count the number of movies released per year
+
+
+
+
+
+registration

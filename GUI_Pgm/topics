@@ -1,0 +1,21 @@
+tkinter
+=======
+for window creation
+
+
+frames
+widgets=label,button(args=text,fg),entry
+
+
+ important
+ =========
+
+ root=Tk()
+ root.mainloop()
+ root.title("title_name")
+
+
+ pack
+ =====
+ widget.pack()
+

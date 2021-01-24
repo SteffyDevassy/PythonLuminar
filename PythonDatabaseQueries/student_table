@@ -1,0 +1,52 @@
+create table students
+rol,name,course,total
+create table student(rol varchar(5),name varchar(10),course varchar(10),total int);
+
+10,ajay mca 140
+11 vijay bca 135
+12 tom mca 145
++------+-------+--------+-------+
+| rol  | name  | course | total |
++------+-------+--------+-------+
+| 10   | ajay  | mca    |   140 |
+| 11   | vijay | bca    |   135 |
+| 12   | tom   | mca    |   140 |
++------+-------+--------+-------+
+
+1. course wise group mcs=2,bca=1
+
+mysql> select course,count(*) from student group by course;
++--------+----------+
+| course | count(*) |
++--------+----------+
+| mca    |        2 |
+| bca    |        1 |
++--------+----------+
+
+
+2. in which course no. of joines<1
+#bca
+
+mysql> select course,count(*) from student group by course having count(*) <2;
++--------+----------+
+| course | count(*) |
++--------+----------+
+| bca    |        1 |
++--------+----------+
+
+
+3. highest total coursewise
+mca=145
+bca=135
+
+mysql> select course,max(total) from student group by course;
++--------+------------+
+| course | max(total) |
++--------+------------+
+| mca    |        145 |
+| bca    |        135 |
++--------+------------+
+
+git link of sajay sir
+======================
+https://github.com/luminartraining/LuminarPythonNovembersecond.git
